@@ -13,6 +13,7 @@
         android:id="@+id/instructions_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="18sp"
         android:text="@string/instructions" />
 
     <Button
@@ -23,6 +24,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="50dp"
+        android:textSize="20sp"
         android:gravity="center"
         android:text="@string/button_text" />
 

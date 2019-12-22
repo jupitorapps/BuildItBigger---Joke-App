@@ -1,7 +1,6 @@
 package com.udacity.gradle.builditbigger;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,8 +41,6 @@ public class MainActivityFragment extends Fragment {
         } else {
 
             View root = inflater.inflate(R.layout.fragment_main_paid, container, false);
-            Log.d(TAG, "onCreateView: Build came here");
-
             return root;
 
         }

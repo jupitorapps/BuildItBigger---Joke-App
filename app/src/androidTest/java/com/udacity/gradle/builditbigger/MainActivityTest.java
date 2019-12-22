@@ -48,9 +48,8 @@ public class MainActivityTest {
     }
 
 
-
     @Test
-    public void asynchTaskTest() throws Throwable{
+    public void asynchTaskTest() throws Throwable {
         Log.d("TAGG", "asynchTaskTest: Came here");
 
         AsyncTask<Context, Void, List<String>> task = new AsyncTask<Context, Void, List<String>>() {
@@ -74,13 +73,11 @@ public class MainActivityTest {
                 context = contexts[0];
 
                 try {
-                    Log.d(TAG, "doInBackground: "+myApiService.setJoke().execute().getData());
 
-                    // Log.d(TAG, "doInBackground: "+myApiService.setJoke().execute().getData());
                     return myApiService.setJoke().execute().getData();
 
                 } catch (IOException e) {
-                    Log.d(TAG, "doInBackground: " + e.getMessage());
+
                     return Collections.singletonList(e.getMessage());
                 }
             }
@@ -88,8 +85,6 @@ public class MainActivityTest {
 
             @Override
             protected void onPostExecute(List<String> postResult) {
-
-                Log.d(TAG, "onPostExecute() called with: JOKE HERE "+postResult.size());
 
                 //13 jokes are retrived from the java library
                 assertEquals(13, postResult.size());
@@ -100,8 +95,6 @@ public class MainActivityTest {
 
         task.execute(context);
         Espresso.onView(withId(android.R.id.content)).perform(ViewActions.click());
-
-        Log.d(TAG, "testAsyncTask end");
 
 
     }

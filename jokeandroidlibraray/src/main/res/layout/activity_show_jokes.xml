@@ -12,7 +12,8 @@
         android:id="@+id/joke_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/joke_placeholder_text"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -32,14 +33,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/TextAppearance.AppCompat.Button"
-            android:text="Previous" />
+            android:text="@string/previous" />
 
         <Button
             android:id="@+id/button_next_joke"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/TextAppearance.AppCompat.Button"
-            android:text="Next" />
+            android:text="@string/next" />
 
 
     </LinearLayout>

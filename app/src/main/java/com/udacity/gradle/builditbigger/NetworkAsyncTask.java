@@ -3,7 +3,6 @@ package com.udacity.gradle.builditbigger;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.util.Log;
 
 import com.example.jokeandroidlibraray.ShowJokesActivity;
 import com.google.api.client.extensions.android.http.AndroidHttp;
@@ -26,6 +25,7 @@ public class NetworkAsyncTask extends AsyncTask<Context, Void, List<String>> {
     @Override
     protected List<String> doInBackground(Context... contexts) {
 
+
         if (myApiService == null) {
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
@@ -43,13 +43,11 @@ public class NetworkAsyncTask extends AsyncTask<Context, Void, List<String>> {
         context = contexts[0];
 
         try {
-            Log.d(TAG, "doInBackground: "+myApiService.setJoke().execute().getData());
 
-           // Log.d(TAG, "doInBackground: "+myApiService.setJoke().execute().getData());
             return myApiService.setJoke().execute().getData();
 
         } catch (IOException e) {
-            Log.d(TAG, "doInBackground: " + e.getMessage());
+
             return Collections.singletonList(e.getMessage());
         }
 
@@ -65,7 +63,6 @@ public class NetworkAsyncTask extends AsyncTask<Context, Void, List<String>> {
 
     private void showJoke(List<String> joke) {
         Intent intent = new Intent(context, ShowJokesActivity.class);
-        // intent.putExtra("joke",joke);
         intent.putStringArrayListExtra("joke", (ArrayList<String>) joke);
         context.startActivity(intent);
     }

@@ -13,6 +13,7 @@
         android:id="@+id/instructions_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="18sp"
         android:text="@string/instructions" />
 
     <Button
@@ -24,6 +25,7 @@
         android:layout_centerHorizontal="true"
         android:layout_above="@id/adView"
         android:layout_marginBottom="50dp"
+        android:textSize="20sp"
         android:text="@string/button_text" />
 
     <com.google.android.gms.ads.AdView
