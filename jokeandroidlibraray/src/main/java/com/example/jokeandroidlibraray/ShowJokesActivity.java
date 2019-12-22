@@ -20,7 +20,6 @@ public class ShowJokesActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String joke = intent.getStringExtra("joke");
 
-
       //  jokesArrayList = intent.getStringArrayListExtra("jokesList");
 
         TextView textView = findViewById(R.id.joke_tv);
