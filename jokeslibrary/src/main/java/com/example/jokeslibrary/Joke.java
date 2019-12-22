@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Joke {
 
-    public String getJoke(){
+    public List getJoke(){
 
         List<String> list;
 
@@ -51,7 +51,7 @@ public class Joke {
                 "Girlfriend boli miss call tha yaar.\n");
 
 
-        return list.get(0);
+        return list;
     }
 
 }

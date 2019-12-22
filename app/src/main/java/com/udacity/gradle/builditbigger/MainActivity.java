@@ -1,10 +1,10 @@
 package com.udacity.gradle.builditbigger;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,14 +18,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Log.d(TAG, "onCreate: Build Flavor: "+BuildConfig.FLAVOR);
+        
 
-      //  Joke joke = new Joke();
 
-    //    Log.d(TAG, "onCreate: Here is the joke"+joke.getJoke());
-
-        NetworkAsyncTask networkAsyncTask = new NetworkAsyncTask();
-        networkAsyncTask.execute(this);
-
+        findViewById(R.id.button_show_jokes).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tellJoke();
+            }
+        });
 
     }
 
@@ -52,8 +54,10 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void tellJoke(View view) {
-        Toast.makeText(this, "derp", Toast.LENGTH_SHORT).show();
+    public void tellJoke() {
+
+        NetworkAsyncTask networkAsyncTask = new NetworkAsyncTask();
+        networkAsyncTask.execute(this);
     }
 
 

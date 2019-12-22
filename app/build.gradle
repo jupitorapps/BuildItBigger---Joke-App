@@ -21,6 +21,8 @@ android {
         versionName "1.0"
         multiDexEnabled true
 
+      //  buildToolsVersion "21.0.1"
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -31,16 +33,32 @@ android {
         }
     }
 
+    flavorDimensions "version"
+
+    productFlavors{
+        free{
+            dimension "version"
+            applicationIdSuffix ".free"
+            versionNameSuffix "-free"
+            resValue 'string', 'app_name', 'Free Joke App'
+
+            dependencies{
+                implementation 'com.google.android.gms:play-services-ads:18.3.0'
+            }
+        }
+        paid{
+            dimension "version"
+            applicationIdSuffix ".paid"
+            versionNameSuffix "-paid"
+            resValue 'string', 'app_name', 'Paid Joke App'
+
+
+        }
+    }
+
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES'
-        exclude 'META-INF/LICENSE'
-        exclude 'META-INF/LICENSE.txt'
-        exclude 'META-INF/license.txt'
-        exclude 'META-INF/NOTICE'
-        exclude 'META-INF/NOTICE.txt'
-        exclude 'META-INF/notice.txt'
-        exclude 'META-INF/ASL2.0'
-        exclude("META-INF/*.kotlin_module")
+
     }
 }
 
@@ -48,7 +66,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     endpointsServer project(path: ':backend', configuration: 'endpoints')
     implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.google.android.gms:play-services-ads:18.3.0'
     implementation 'com.google.api-client:google-api-client:1.30.7'
     implementation 'com.google.http-client:google-http-client-android:1.23.0'
     implementation 'com.google.code.findbugs:jsr305:3.0.2'

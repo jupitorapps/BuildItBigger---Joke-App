@@ -87,7 +87,10 @@
    "id": "MyBean",
    "properties": {
     "data": {
-     "type": "string"
+     "items": {
+      "type": "string"
+     },
+     "type": "array"
     }
    },
    "type": "object"
