@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
         NetworkAsyncTask networkAsyncTask = new NetworkAsyncTask();
         networkAsyncTask.execute(this);
+
     }
 
 

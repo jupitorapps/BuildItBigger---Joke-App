@@ -10,6 +10,7 @@ public class Joke {
         List<String> list;
 
         list = new ArrayList<>();
+
         list.add("Q: What is the difference between motorbike and boyfriend?\n" +
                 "A: Well, bike is first kicked than used and boyfriend is first used than kicked ZZZZ ... :)");
         list.add("Boyfriend: Dear do you know that exams are like girlfriend?\n" +
