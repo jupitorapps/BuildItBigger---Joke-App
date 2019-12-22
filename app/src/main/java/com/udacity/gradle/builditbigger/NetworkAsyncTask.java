@@ -40,6 +40,7 @@ public class NetworkAsyncTask extends AsyncTask<Context, Void, String> {
         context = contexts[0];
 
         try {
+            Log.d(TAG, "doInBackground: "+myApiService.setJoke().execute().getData());
 
             return myApiService.setJoke().execute().getData();
 
