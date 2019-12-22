@@ -13,15 +13,18 @@ import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-public class NetworkAsyncTask extends AsyncTask<Context, Void, String> {
+public class NetworkAsyncTask extends AsyncTask<Context, Void, List> {
 
     private static final String TAG = "TAGG";
     private static MyApi myApiService = null;
     private Context context;
 
     @Override
-    protected String doInBackground(Context... contexts) {
+    protected List doInBackground(Context... contexts) {
 
         if (myApiService == null) {
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
@@ -37,31 +40,31 @@ public class NetworkAsyncTask extends AsyncTask<Context, Void, String> {
 
             myApiService = builder.build();
         }
-        context = contexts[0];
+    //    context = contexts[0];
 
         try {
 
             return myApiService.setJoke().execute().getData();
 
         } catch (IOException e) {
-            Log.d(TAG, "doInBackground: "+e.getMessage());
-            return e.getMessage();
+            Log.d(TAG, "doInBackground: " + e.getMessage());
+            return Collections.singletonList(e.getMessage());
         }
 
 
     }
 
     @Override
-    protected void onPostExecute(String postResult) {
+    protected void onPostExecute(List postResult) {
 
         showJoke(postResult);
     }
 
 
-    private void showJoke(String joke){
+    private void showJoke(List joke) {
         Intent intent = new Intent(context, ShowJokesActivity.class);
-        intent.putExtra("joke",joke);
-      //  intent.putStringArrayListExtra("joke", (ArrayList<String>) joke);
+        // intent.putExtra("joke",joke);
+        intent.putStringArrayListExtra("joke", (ArrayList<String>) joke);
         context.startActivity(intent);
     }
 

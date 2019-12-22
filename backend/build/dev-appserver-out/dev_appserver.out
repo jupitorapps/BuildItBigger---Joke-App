@@ -1,23 +1,21 @@
-Dec 22, 2019 5:08:10 AM com.google.appengine.tools.development.SystemPropertiesManager setSystemProperties
+Dec 22, 2019 12:04:12 PM com.google.appengine.tools.development.SystemPropertiesManager setSystemProperties
 INFO: Overwriting system property key 'java.util.logging.config.file', value '/Users/pradeepbehera/google-cloud-sdk/platform/google_appengine/google/appengine/tools/java/config/sdk/logging.properties' with value 'WEB-INF/logging.properties' from '/Users/pradeepbehera/Desktop/Projects/BuildItBiggerFinalProject/backend/build/exploded-backend/WEB-INF/appengine-web.xml'
-2019-12-22 05:08:10.891:INFO::main: Logging initialized @658ms to org.eclipse.jetty.util.log.StdErrLog
-2019-12-22 05:08:10.930:WARN:oejs.AbstractConnector:main: Ignoring deprecated socket close linger time
-Dec 21, 2019 11:38:11 PM com.google.appengine.tools.development.IsolatedAppClassLoader checkWorkingDirectory
+2019-12-22 12:04:12.566:INFO::main: Logging initialized @735ms to org.eclipse.jetty.util.log.StdErrLog
+2019-12-22 12:04:12.612:WARN:oejs.AbstractConnector:main: Ignoring deprecated socket close linger time
+Dec 22, 2019 6:34:12 AM com.google.appengine.tools.development.IsolatedAppClassLoader checkWorkingDirectory
 WARNING: Your working directory, (/Users/pradeepbehera/Desktop/Projects/BuildItBiggerFinalProject/backend) is not equal to your 
 web application root (/Users/pradeepbehera/Desktop/Projects/BuildItBiggerFinalProject/backend/build/exploded-backend)
 You will not be able to access files from your working directory on the production server.
 
-2019-12-22 05:08:11.317:INFO:oejs.Server:main: jetty-9.4.18.v20190429; built: 2019-04-29T20:42:08.989Z; git: e1bc35120a6617ee3df052294e433f3a25ce7097; jvm 1.8.0_202-release-1483-b49-5587405
-2019-12-22 05:08:11.722:INFO:oejsh.ContextHandler:main: Started c.g.a.t.d.j.DevAppEngineWebAppContext@65987993{/,file:///Users/pradeepbehera/Desktop/Projects/BuildItBiggerFinalProject/backend/build/exploded-backend/,AVAILABLE}{/Users/pradeepbehera/Desktop/Projects/BuildItBiggerFinalProject/backend/build/exploded-backend}
-2019-12-22 05:08:11.723:INFO:oejs.session:main: DefaultSessionIdManager workerName=node0
-2019-12-22 05:08:11.723:INFO:oejs.session:main: node0 Scavenging disabled
-2019-12-22 05:08:11.740:INFO:oejs.AbstractConnector:main: Started NetworkTrafficSelectChannelConnector@3632be31{HTTP/1.1,[http/1.1]}{localhost:8080}
-2019-12-22 05:08:11.758:INFO:oejs.Server:main: Started @1525ms
-Dec 21, 2019 11:38:11 PM com.google.appengine.tools.development.AbstractModule startup
+2019-12-22 12:04:12.943:INFO:oejs.Server:main: jetty-9.4.18.v20190429; built: 2019-04-29T20:42:08.989Z; git: e1bc35120a6617ee3df052294e433f3a25ce7097; jvm 1.8.0_202-release-1483-b49-5587405
+2019-12-22 12:04:13.272:INFO:oejsh.ContextHandler:main: Started c.g.a.t.d.j.DevAppEngineWebAppContext@65987993{/,file:///Users/pradeepbehera/Desktop/Projects/BuildItBiggerFinalProject/backend/build/exploded-backend/,AVAILABLE}{/Users/pradeepbehera/Desktop/Projects/BuildItBiggerFinalProject/backend/build/exploded-backend}
+2019-12-22 12:04:13.272:INFO:oejs.session:main: DefaultSessionIdManager workerName=node0
+2019-12-22 12:04:13.272:INFO:oejs.session:main: node0 Scavenging disabled
+2019-12-22 12:04:13.286:INFO:oejs.AbstractConnector:main: Started NetworkTrafficSelectChannelConnector@3632be31{HTTP/1.1,[http/1.1]}{localhost:8080}
+2019-12-22 12:04:13.302:INFO:oejs.Server:main: Started @1471ms
+Dec 22, 2019 6:34:13 AM com.google.appengine.tools.development.AbstractModule startup
 INFO: Module instance default is running at http://localhost:8080/
-Dec 21, 2019 11:38:11 PM com.google.appengine.tools.development.AbstractModule startup
+Dec 22, 2019 6:34:13 AM com.google.appengine.tools.development.AbstractModule startup
 INFO: The admin console is running at http://localhost:8080/_ah/admin
-Dec 22, 2019 5:08:11 AM com.google.appengine.tools.development.DevAppServerImpl doStart
+Dec 22, 2019 12:04:13 PM com.google.appengine.tools.development.DevAppServerImpl doStart
 INFO: Dev App Server is now running
-Dec 22, 2019 5:10:22 AM com.google.appengine.tools.development.jetty9.LocalResourceFileServlet doGet
-WARNING: No file found for: /favicon.ico

@@ -87,9 +87,16 @@
    "id": "MyBean",
    "properties": {
     "data": {
-     "type": "string"
+     "items": {
+      "$ref": "Object"
+     },
+     "type": "array"
     }
    },
+   "type": "object"
+  },
+  "Object": {
+   "id": "Object",
    "type": "object"
   }
  },
