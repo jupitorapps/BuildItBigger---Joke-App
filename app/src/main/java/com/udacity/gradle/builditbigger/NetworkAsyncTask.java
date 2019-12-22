@@ -17,14 +17,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class NetworkAsyncTask extends AsyncTask<Context, Void, List> {
+public class NetworkAsyncTask extends AsyncTask<Context, Void, List<String>> {
 
     private static final String TAG = "TAGG";
     private static MyApi myApiService = null;
     private Context context;
 
     @Override
-    protected List doInBackground(Context... contexts) {
+    protected List<String> doInBackground(Context... contexts) {
 
         if (myApiService == null) {
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
@@ -40,10 +40,11 @@ public class NetworkAsyncTask extends AsyncTask<Context, Void, List> {
 
             myApiService = builder.build();
         }
-    //    context = contexts[0];
+        context = contexts[0];
 
         try {
 
+           // Log.d(TAG, "doInBackground: "+myApiService.setJoke().execute().getData());
             return myApiService.setJoke().execute().getData();
 
         } catch (IOException e) {
@@ -55,13 +56,13 @@ public class NetworkAsyncTask extends AsyncTask<Context, Void, List> {
     }
 
     @Override
-    protected void onPostExecute(List postResult) {
+    protected void onPostExecute(List<String> postResult) {
 
         showJoke(postResult);
     }
 
 
-    private void showJoke(List joke) {
+    private void showJoke(List<String> joke) {
         Intent intent = new Intent(context, ShowJokesActivity.class);
         // intent.putExtra("joke",joke);
         intent.putStringArrayListExtra("joke", (ArrayList<String>) joke);

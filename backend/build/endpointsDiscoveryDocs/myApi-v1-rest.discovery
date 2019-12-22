@@ -88,15 +88,11 @@
    "properties": {
     "data": {
      "items": {
-      "$ref": "Object"
+      "type": "string"
      },
      "type": "array"
     }
    },
-   "type": "object"
-  },
-  "Object": {
-   "id": "Object",
    "type": "object"
   }
  },

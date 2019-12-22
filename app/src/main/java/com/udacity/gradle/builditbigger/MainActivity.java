@@ -18,11 +18,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-      //  Joke joke = new Joke();
-
-    //    Log.d(TAG, "onCreate: Here is the joke"+joke.getJoke());
-
         NetworkAsyncTask networkAsyncTask = new NetworkAsyncTask();
         networkAsyncTask.execute(this);
 
