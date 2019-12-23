@@ -1,6 +1,5 @@
 package com.udacity.gradle.builditbigger;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -23,14 +22,8 @@ public class NetworkAsyncTask extends AsyncTask<Context, Void, List<String>> {
     private static MyApi myApiService = null;
     private Context context;
 
-
-    private ProgressDialog progressDialog;
-
     @Override
     protected List<String> doInBackground(Context... contexts) {
-
-//        progressDialog = new ProgressDialog(context);
-//        progressDialog.setMessage("Loading.....");
 
         if (myApiService == null) {
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
@@ -64,10 +57,6 @@ public class NetworkAsyncTask extends AsyncTask<Context, Void, List<String>> {
 
     @Override
     protected void onPostExecute(List<String> postResult) {
-//        if (progressDialog.isShowing()){
-//            progressDialog.dismiss();
-//        }
-
         showJoke(postResult);
     }
 
