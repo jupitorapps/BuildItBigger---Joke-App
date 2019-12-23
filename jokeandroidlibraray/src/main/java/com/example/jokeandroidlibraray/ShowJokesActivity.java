@@ -2,6 +2,7 @@ package com.example.jokeandroidlibraray;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -25,7 +26,16 @@ public class ShowJokesActivity extends AppCompatActivity {
         Intent intent = getIntent();
         jokesArrayList = intent.getStringArrayListExtra("joke");
 
-        randomNumber = new Random().nextInt(jokesArrayList.size()-1);
+        if ( jokesArrayList != null && jokesArrayList.size() == 1){
+            //to accomodate error message which has only one message entry
+            randomNumber = new Random().nextInt(jokesArrayList.size());
+        } else {
+            randomNumber = new Random().nextInt(jokesArrayList.size()-1);
+        }
+
+        Log.d(TAG, "onCreate: List Size: "+jokesArrayList.size());
+
+
 
         textView = findViewById(R.id.joke_tv);
 

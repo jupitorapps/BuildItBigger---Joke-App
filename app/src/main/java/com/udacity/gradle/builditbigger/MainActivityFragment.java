@@ -16,6 +16,8 @@ import com.google.android.gms.ads.AdView;
  */
 public class MainActivityFragment extends Fragment {
 
+
+
     private String TAG = "TAGG";
 
     public MainActivityFragment() {
